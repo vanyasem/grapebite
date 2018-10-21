@@ -1,0 +1,7 @@
+*.dxvk-cache
+*.log
+.wine/
+_DXVK_prefix/
+legacy/
+setup/
+PKGBUILDS/
