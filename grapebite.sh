@@ -7,7 +7,7 @@ if [ ! -f "$BINDIR/config.cfg" ]; then
 	echo -e "${YEL}Please, take your time to configure it${STD}"
 	read -p "Press enter to continue to the editor"
 	sudo cp "$BINDIR/config.cfg.sample" "$BINDIR/config.cfg"
-	sudoedit "$BINDIR/config.cfg" 2> /dev/null | edit "$BINDIR/config.cfg"
+	sudoedit "$BINDIR/config.cfg" 2> /dev/null || edit "$BINDIR/config.cfg"
 fi
 source "$BINDIR/config.cfg"
 
@@ -82,7 +82,10 @@ update_origin() {
 	if [ ! -f "$ORIGINPATH/updateorigin.sh" ]; then
 		wget "https://raw.githubusercontent.com/DrDoctor13/wine-origin-updater/master/updateorigin.sh" -O "$ORIGINPATH/updateorigin.sh" && update_origin
 	fi
-	"$ORIGINPATH/updateorigin.sh"
+	rm "$CACHEDIR/OriginSetup.exe" || true
+	cd "$CACHEDIR"
+	echo "$ORIGINPATH" | WINEPREFIX="" "$ORIGINPATH/updateorigin.sh"
+
 }
 
 remove_menu() {
@@ -101,7 +104,7 @@ read_options() {
 	case $choice in
 		1) install ;;
 		2) uninstall ;;
-		3) sudoedit "$BINDIR/config.cfg" 2> /dev/null | edit "$BINDIR/config.cfg" ;;
+		3) sudoedit "$BINDIR/config.cfg" 2> /dev/null || edit "$BINDIR/config.cfg" ;;
 		4) "$BINDIR/install.sh" ;;
 		5) update_origin ;;
 		#6) remove_menu && "$BINDIR/setupicons.sh" ;;
