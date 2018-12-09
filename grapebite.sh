@@ -5,7 +5,7 @@ source "$BINDIR/env.cfg"
 if [ ! -f "$BINDIR/config.cfg" ]; then
 	echo -e "It appears that it's your first time running grapebite"
 	echo -e "${YEL}Please, take your time to configure it${STD}"
-    read -p "Press enter to continue to the editor"
+	read -p "Press enter to continue to the editor"
 	sudo cp "$BINDIR/config.cfg.sample" "$BINDIR/config.cfg"
 	sudoedit "$BINDIR/config.cfg" 2> /dev/null | edit "$BINDIR/config.cfg"
 fi

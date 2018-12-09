@@ -1,15 +1,11 @@
-#! /bin/sh 
-# script by xpander
+#! /bin/sh
 
-#source $(dirname "$0")/envsetup.sh
+BINDIR="$(dirname "$(readlink -fn "$0")")"
+source "$BINDIR/config.cfg"
 
-# Disable debugging
-export WINEDEBUG=-all
-
-# Vulkan stuff
-export DXVK_DEBUG_LAYERS=0
-export DXVK_HUD=devinfo,fps
-
-# Start Steam in prefix
-#WINEESYNC=1 wine "/home/vanyasem/.wine/drive_c/Program Files (x86)vBattle.net/Battle.net.exe"
-wine "/home/vanyasem/.wine/drive_c/Program Files (x86)/Battle.net/Battle.net.exe"
+if [ -f "$BATTLENETPATH/Battle.net.exe" ]; then
+	wine "$BATTLENETPATH/Battle.net.exe"
+else
+	echo "Battle.net doesn't appear to be installed or the path is incorrect!"
+	echo "Launch grapebite to configure or install it"
+fi

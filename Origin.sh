@@ -1,15 +1,11 @@
-#! /bin/sh 
-# script by xpander
+#! /bin/sh
 
-#source $(dirname "$0")/envsetup.sh
+BINDIR="$(dirname "$(readlink -fn "$0")")"
+source "$BINDIR/config.cfg"
 
-# Disable debugging
-export WINEDEBUG=-all
-
-# Vulkan stuff
-export DXVK_DEBUG_LAYERS=0
-export DXVK_HUD=devinfo,fps
-
-# Start Steam in prefix
-#WINEESYNC=1 wine "/home/vanyasem/.wine/drive_c/Program Files (x86)/Origin/Origin.exe"
-wine "/home/vanyasem/.wine/drive_c/Program Files (x86)/Origin/Origin.exe"
+if [ -f "$ORIGINPATH/Origin.exe" ]; then
+	wine "$ORIGINPATH/Origin.exe"
+else
+	echo "Origin doesn't appear to be installed or the path is incorrect!"
+	echo "Launch grapebite to configure or install it"
+fi

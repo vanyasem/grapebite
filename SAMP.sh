@@ -1,12 +1,11 @@
-#! /bin/sh 
-# script by xpander
+#! /bin/sh
 
-#source $(dirname "$0")/envsetup.sh
+BINDIR="$(dirname "$(readlink -fn "$0")")"
+source "$BINDIR/config.cfg"
 
-# Disable debugging
-export WINEDEBUG=-all
-#export WINEDEBUG=+loaddll
-#export WINEDEBUG=fps
-
-#wine "$BINDIR/_DXVK_prefix/drive_c/mod_sa.v4.4.2.0.SA-MP.v0.3.DL-R1.Setup.exe"
-__GL_THREADED_OPTIMIZATIONS=1 LC_ALL=ru_RU.UTF-8 WINEESYNC=1 WINEDEBUG=-all wine "/mnt/windows/Games/GTA San Andreas-def/samp.exe"
+if [ -f "$SAMPPATH/samp.exe" ]; then
+	wine "$SAMPPATH/samp.exe"
+else
+	echo "SAMP doesn't appear to be installed or the path is incorrect!"
+	echo "Launch grapebite to configure or install it"
+fi
