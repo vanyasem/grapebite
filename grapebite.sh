@@ -54,10 +54,11 @@ install() {
 	rm -r "$WINEPREFIX/drive_c/users/$USER/Temp" || true
 	ln -s /tmp/ "$WINEPREFIX/drive_c/users/$USER/Temp" || true
 
-	wine "$BINDIR/setup/VulkanSDK-1.1.82.1-Installer.exe" && wineserver -k
-	setup_dxvk32
-	setup_dxvk64
-	winetricks nocrashdialog
+	install="$CACHEDIR/setup/vulkan-sdk.exe"
+	if [ ! -f "$install" ]; then
+		wget "https://sdk.lunarg.com/sdk/download/latest/windows/vulkan-sdk.exe" -O "$install"
+	fi
+	wine $install
 
 	touch "$WINEPREFIX/grapebite"
 
