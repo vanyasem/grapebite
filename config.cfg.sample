@@ -1,0 +1,16 @@
+#! /bin/sh
+
+export WINEPREFIX="$HOME/.wine"
+export WINEESYNC=0
+export WINEDEBUG=-all
+export DXVK_LOG_LEVEL=none
+export DXVK_HUD=fps
+#export DXVK_CONFIG_FILE=/xxx/dxvk.conf
+
+CACHEDIR="$HOME/.cache/grapebite"
+STEAMPATH="$WINEPREFIX/drive_c/Program Files (x86)/Steam/"
+ORIGINPATH="$WINEPREFIX/drive_c/Program Files (x86)/Origin/"
+GTAVPATH="$WINEPREFIX/drive_c/Games/GTAV/"
+BATTLENETPATH="$WINEPREFIX/drive_c/Program Files (x86)/Battle.net/"
+WOTPATH="$WINEPREFIX/drive_c/Games/World_of_Tanks_RU/"
+SAMPPATH="$WINEPREFIX/drive_c/Games/GTA San Andreas/"

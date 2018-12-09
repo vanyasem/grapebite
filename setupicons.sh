@@ -3,10 +3,10 @@
 APPS="$HOME/.local/share/applications/wine"
 MENUS="$HOME/.config/menus/applications-merged"
 
-mkdir -p $APPS
-mkdir -p $MENUS
+mkdir -p "$APPS"
+mkdir -p "$MENUS"
 
-cat << EOF > $APPS/wine-uninstaller.desktop
+cat << EOF > "$APPS/wine-uninstaller.desktop"
 [Desktop Entry]
 Name=Uninstall Wine Software
 Comment=Uninstall Windows applications for Wine
@@ -17,7 +17,7 @@ Icon=wine-uninstaller
 Categories=Wine;
 EOF
 
-cat << EOF > $APPS/wine-winecfg.desktop
+cat << EOF > "$APPS/wine-winecfg.desktop"
 [Desktop Entry]
 Name=Configure Wine
 Comment=Change Wine options
@@ -28,7 +28,7 @@ Type=Application
 Categories=Wine;
 EOF
 
-cat << EOF > $APPS/wine-explorer.desktop
+cat << EOF > "$APPS/wine-explorer.desktop"
 [Desktop Entry]
 Name=Explorer
 Comment=File Manager
@@ -39,7 +39,7 @@ Type=Application
 Categories=Wine;
 EOF
 
-cat << EOF > $APPS/wine-iexplore.desktop
+cat << EOF > "$APPS/wine-iexplore.desktop"
 [Desktop Entry]
 Name=Internet Explorer
 Comment=Web Browser
@@ -50,7 +50,7 @@ Type=Application
 Categories=Wine;
 EOF
 
-cat << EOF > $APPS/wine-control.desktop
+cat << EOF > "$APPS/wine-control.desktop"
 [Desktop Entry]
 Name=Control Panel
 Comment=Change Wine system settings
@@ -61,7 +61,7 @@ Type=Application
 Categories=Wine;
 EOF
 
-cat << EOF > $APPS/wine-cmd.desktop
+cat << EOF > "$APPS/wine-cmd.desktop"
 [Desktop Entry]
 Name=CMD
 Comment=Command Prompt
@@ -72,7 +72,7 @@ Type=Application
 Categories=Wine;
 EOF
 
-cat << EOF > $APPS/wine-wordpad.desktop
+cat << EOF > "$APPS/wine-wordpad.desktop"
 [Desktop Entry]
 Name=Wordpad
 Comment=Word Processor
@@ -83,7 +83,7 @@ Type=Application
 Categories=Wine;
 EOF
 
-cat << EOF > $APPS/wine-winver.desktop
+cat << EOF > "$APPS/wine-winver.desktop"
 [Desktop Entry]
 Name=About Wine
 Comment=Information about Wine
@@ -94,7 +94,7 @@ Type=Application
 Categories=Wine;
 EOF
 
-cat << EOF > $APPS/wine-winemine.desktop
+cat << EOF > "$APPS/wine-winemine.desktop"
 [Desktop Entry]
 Name=Minesweeper
 Comment=Classic Minesweeper game
@@ -105,7 +105,7 @@ Type=Application
 Categories=Wine;
 EOF
 
-cat << EOF > $APPS/wine-taskmgr.desktop
+cat << EOF > "$APPS/wine-taskmgr.desktop"
 [Desktop Entry]
 Name=Task Manager
 Comment=Manage Wine processes
@@ -116,7 +116,7 @@ Type=Application
 Categories=Wine;
 EOF
 
-cat << EOF > $APPS/wine-winefile.desktop
+cat << EOF > "$APPS/wine-winefile.desktop"
 [Desktop Entry]
 Name=File
 Comment=Advanced File Manager
@@ -127,7 +127,7 @@ Type=Application
 Categories=Wine;
 EOF
 
-cat << EOF > $MENUS/wine.menu
+cat << EOF > "$MENUS/wine.menu"
 <!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
 "http://www.freedesktop.org/standards/menu-spec/menu-1.0.dtd">
 <Menu>
