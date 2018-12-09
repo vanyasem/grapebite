@@ -11,7 +11,5 @@ export DXVK_DEBUG_LAYERS=0
 export DXVK_HUD=devinfo,fps
 
 # Start Steam in prefix
-cd "/mnt/windows/Program Files (x86)/Steam/"
-LC_ALL=ru_RU.UTF-8 wine Steam.exe -no-browser
-#WINEESYNC=1 
-
+#WINEESYNC=1 wine "/mnt/windows/Games/World_of_Tanks_RU/wgc_api.exe"
+wine "/mnt/windows/Games/World_of_Tanks_RU/WoTLauncher.exe"

@@ -26,6 +26,7 @@ wine "$BINDIR/setup/VulkanSDK-1.1.82.1-Installer.exe" && wineserver -k
 
 setup_dxvk32
 setup_dxvk64
+winetricks nocrashdialog
 
 echo "Enable GTK, d3d9 override, disable nvapi / nvapi64 (set XP for Social Club)"
 winecfg

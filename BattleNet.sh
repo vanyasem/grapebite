@@ -11,7 +11,5 @@ export DXVK_DEBUG_LAYERS=0
 export DXVK_HUD=devinfo,fps
 
 # Start Steam in prefix
-cd "/mnt/windows/Program Files (x86)/Steam/"
-LC_ALL=ru_RU.UTF-8 wine Steam.exe -no-browser
-#WINEESYNC=1 
-
+#WINEESYNC=1 wine "/home/vanyasem/.wine/drive_c/Program Files (x86)vBattle.net/Battle.net.exe"
+wine "/home/vanyasem/.wine/drive_c/Program Files (x86)/Battle.net/Battle.net.exe"
